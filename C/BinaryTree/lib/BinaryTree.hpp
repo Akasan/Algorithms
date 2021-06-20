@@ -4,13 +4,17 @@
 
 struct Node{
 public:
-    struct Node* parent;
-    struct Node* left;
-    struct Node* right;
+    struct Node* parent = NULL;
+    struct Node* left = NULL;
+    struct Node* right = NULL;
     int value;
     Node(int);
+    void setParent(Node*);
     void setLeft(Node*);
     void setRight(Node*);
+    bool existParent();
+    bool existLeft();
+    bool existRight();
 };
 
 

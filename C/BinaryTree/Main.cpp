@@ -7,29 +7,27 @@
 #include <random>
 
 
-#define SIZE 20
+#define SIZE 5
 
 
 int printNode(int cnt, Node node, int depth)
 {
     for(int i=0; i<cnt; i++){
-        std::cout << " ";
+        std::cout << "-";
     }
-    std::cout << node.value << std::endl;
-    for(int i=0; i<cnt; i++){
-        std::cout << " ";
-    }
-    std::cout << "LEFT" << std::endl;
-    while(node.left != NULL){
-        printNode(cnt+1, *node.left, depth);
+    while(node.right != NULL){
+        printNode(cnt+1, *node.right, depth);
         break;
     }
     for(int i=0; i<cnt; i++){
-        std::cout << " ";
+        std::cout << "-";
     }
-    std::cout << "RIGHT" << std::endl;
-    while(node.right != NULL){
-        printNode(cnt+1, *node.right, depth);
+    std::cout << node.value << std::endl;
+    for(int i=0; i<cnt; i++){
+        std::cout << "-";
+    }
+    while(node.left != NULL){
+        printNode(cnt+1, *node.left, depth);
         break;
     }
     return depth +1;
@@ -43,8 +41,5 @@ int main(void){
 	std::shuffle(array.begin(), array.end(), engine);
 
 	Node root = make_graph_simple(array);
-	std::cout << root.left << std::endl;
-
-	int depth = printNode(0, root, 1);
-	std::cout << depth << std::endl;
+	printNode(0, root, 1);
 }
