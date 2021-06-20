@@ -13,14 +13,20 @@ Node::Node(int value)
 
 void Node::setLeft(Node* node){
     this->left = node;
+    node->parent = this;
+    node->depth = this->depth + 1;
 }
 
 void Node::setRight(Node* node){
     this->right = node;
+    node->parent = this;
+    node->depth = this->depth + 1;
 }
 
 void Node::setParent(Node* node){
     this->parent = node;
+    node->parent = this;
+    node->depth = this->depth + 1;
 }
 
 bool Node::existParent(){

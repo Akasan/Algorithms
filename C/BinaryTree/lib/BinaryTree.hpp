@@ -8,6 +8,7 @@ public:
     struct Node* left = NULL;
     struct Node* right = NULL;
     int value;
+    int depth = 0;
     Node(int);
     void setParent(Node*);
     void setLeft(Node*);

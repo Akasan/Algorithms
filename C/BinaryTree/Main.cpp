@@ -42,4 +42,6 @@ int main(void){
 
 	Node root = make_graph_simple(array);
 	printNode(0, root, 1);
+
+    std::cout << root.depth << std::endl;
 }
